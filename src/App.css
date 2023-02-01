@@ -13,7 +13,7 @@ body{
 .App .countainer{
   display: flex;
   width: 80rem;
-  padding: 2rem;
+  padding: 1.5rem;
   gap: 1rem;
   background-color: hsl(0, 0%, 100%);
   border-radius: 20px;
@@ -41,4 +41,27 @@ body{
   flex: 3;
   border: 1px solid red;
   border-radius: 20px;
+}
+
+article{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation :first-child{
+  background-color: transparent;
+  border: none;
+}
+
+.navigation :last-child{
+  background-color: blue;
 }
