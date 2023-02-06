@@ -1,5 +1,6 @@
-body{
-  
+*{
+ margin: 0;
+ padding: 0; 
 }
 
 .App {
@@ -30,6 +31,7 @@ body{
   background-size: cover;
   flex: 1;
   height: 50rem;
+  padding: 2rem;
   border: 1px solid red;
   border-radius: 20px;
 }
@@ -57,11 +59,77 @@ article{
   justify-content: space-between;
 }
 
+/* title */
+
+.title{
+  font-size: 2rem;
+  color: hsl(213, 96%, 18%);
+}
+
+/* subtext */
+
+.subtext{
+  opacity: 0.7;
+}
+
+
+/* input */
+
+input{
+  width: 100%;
+  height: 2rem;
+  border-radius: 20px;
+}
+
+
+/* bottom button */
+
 .navigation :first-child{
   background-color: transparent;
   border: none;
 }
 
 .navigation :last-child{
-  background-color: blue;
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  height: 3rem;
+  width: 7rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+}
+
+/* steps */
+
+.sidebar:first-child{
+  background-color: aquamarine;
+}
+
+.steps{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.steps h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.steps p{
+  color: white;
+}
+
+.steps p:first-child{
+  opacity: 0.7;
 }

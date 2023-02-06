@@ -3,8 +3,8 @@
 export default function Info() {
   return (
     <div>
-        <h1>Personal Info</h1>
-        <p>Please provide your name, email address, and phone number.</p>
+        <h1 className="title">Personal Info</h1>
+        <p className="subtext">Please provide your name, email address, and phone number.</p>
         <p>Name</p>
         <input></input>
         <p>Email Address</p>
