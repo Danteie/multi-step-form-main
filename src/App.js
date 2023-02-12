@@ -1,7 +1,24 @@
 import './App.css';
 import Info from './Componet/Info/Info';
+import Plan from './Componet/Plan/Plan';
 
 function App() {
+  let paths =  [<Info />,<Plan />];  
+
+  function path(){
+    for (let index = 0; index < paths.length; index++) {
+      return paths[index];
+      break;
+    }
+  }
+
+  function press(e){
+    const buttonValue = e.target.value;
+    console.log(buttonValue);
+  }
+
+  
+
   return (
     <div className="App">
       <div className='countainer'>
@@ -39,11 +56,11 @@ function App() {
         <div className='content'>
           <article>
             <div>
-              <Info />
+              {path()}
             </div> 
             <div className='navigation'>
               <button>Go Back</button>
-              <button>Next Step</button>
+              <button onClick={press}>Next Step</button>
             </div>
           </article>
         </div>

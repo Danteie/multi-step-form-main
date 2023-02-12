@@ -103,6 +103,10 @@ input{
   border-radius: 20px;
 }
 
+.navigation :last-child:active{
+ background-color: red;
+}
+
 /* steps */
 
 .steps{
