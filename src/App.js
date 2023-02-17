@@ -1,24 +1,29 @@
+import { useState } from 'react';
 import './App.css';
 import Info from './Componet/Info/Info';
 import Plan from './Componet/Plan/Plan';
+import Add from './Componet/Add/Add';
+import Summary from './Componet/Summary/Summary';
 
 function App() {
-  let paths =  [<Info />,<Plan />];  
+  let paths =  [<Info />,<Plan />,<Add/>,<Summary/>];  
+  const [index, setIndex] = useState(0);
 
-  function path(){
-    for (let index = 0; index < paths.length; index++) {
-      return paths[index];
-      break;
-    }
+ 
+
+  function nextStep(e){
+    setIndex(index + 1)
   }
 
-  function press(e){
-    const buttonValue = e.target.value;
-    console.log(buttonValue);
+  function goBack(e){
+    setIndex(index - 1)
+  }
+
+  function path(){
+    return paths[index]
   }
 
   
-
   return (
     <div className="App">
       <div className='countainer'>
@@ -59,8 +64,8 @@ function App() {
               {path()}
             </div> 
             <div className='navigation'>
-              <button>Go Back</button>
-              <button onClick={press}>Next Step</button>
+              <button onClick={goBack}>Go Back</button>
+              <button onClick={nextStep}>Next Step</button>
             </div>
           </article>
         </div>
