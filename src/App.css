@@ -91,6 +91,7 @@ input{
 .navigation :first-child{
   background-color: transparent;
   border: none;
+  opacity: 0;
 }
 
 .navigation :last-child{

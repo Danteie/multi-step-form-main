@@ -20,6 +20,9 @@ function App() {
   }
 
   function path(){
+    // Go Back dugme
+    if (index >= 1) document.getElementById('back').style.opacity = 1;
+  
     return paths[index]
   }
 
@@ -64,7 +67,7 @@ function App() {
               {path()}
             </div> 
             <div className='navigation'>
-              <button onClick={goBack}>Go Back</button>
+              <button id='back' onClick={goBack}>Go Back</button>
               <button onClick={nextStep}>Next Step</button>
             </div>
           </article>
