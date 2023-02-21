@@ -28,10 +28,17 @@ function App() {
     return paths[index]
   }
 
-  useEffect(()=>{
+  function stepCheck(){
     let steps = document.querySelectorAll('.steps h1');
+    for (let i = 0; i < steps.length; i++) {
+      steps[i].style.background = 'transparent';
+    } 
     steps[index].style.background = 'red';
-  },[index]);
+  }
+
+  useEffect(()=>{
+    stepCheck()
+  });
 
   
   return (
