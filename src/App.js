@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Info from './Componet/Info/Info';
 import Plan from './Componet/Plan/Plan';
@@ -7,12 +7,15 @@ import Summary from './Componet/Summary/Summary';
 
 function App() {
   let paths =  [<Info />,<Plan />,<Add/>,<Summary/>];  
+   
+
   const [index, setIndex] = useState(0);
 
  
 
   function nextStep(e){
     setIndex(index + 1)
+    
   }
 
   function goBack(e){
@@ -22,9 +25,13 @@ function App() {
   function path(){
     // Go Back dugme
     if (index >= 1) document.getElementById('back').style.opacity = 1;
-  
     return paths[index]
   }
+
+  useEffect(()=>{
+    let steps = document.querySelectorAll('.steps h1');
+    steps[index].style.background = 'red';
+  },[index]);
 
   
   return (
@@ -32,7 +39,7 @@ function App() {
       <div className='countainer'>
         <div className='sidebar'>
           <div className='steps'>
-            <h1 className='bg'>1</h1>
+            <h1>1</h1>
             <div>
                 <p>STEP 1</p>
                 <p>YOUR INFO</p>
