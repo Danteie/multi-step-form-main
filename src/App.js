@@ -7,24 +7,23 @@ import Summary from './Componet/Summary/Summary';
 
 function App() {
   let paths =  [<Info />,<Plan />,<Add/>,<Summary/>];  
-   
-
   const [index, setIndex] = useState(0);
 
- 
-
   function nextStep(e){
+    if(index >= 3) return
     setIndex(index + 1)
-    
   }
 
   function goBack(e){
+    console.log(index);
+    if(index == 0) return
     setIndex(index - 1)
   }
 
   function path(){
-    // Go Back dugme
+    // Go Back button
     if (index >= 1) document.getElementById('back').style.opacity = 1;
+    //render commpoennt
     return paths[index]
   }
 
@@ -36,8 +35,10 @@ function App() {
     steps[index].style.background = 'red';
   }
 
+
   useEffect(()=>{
-    stepCheck()
+    stepCheck();
+    if (index === 0) document.getElementById('back').style.opacity = 0;
   });
 
   
