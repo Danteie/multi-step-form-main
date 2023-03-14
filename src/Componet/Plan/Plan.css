@@ -3,9 +3,36 @@
     justify-content: space-between;
 }
 
+
+
+.plan-container img{
+    width: 45px;
+    height: 45px;
+}
+
+.plan-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: start;
+    padding: 1rem;
+    height: 9rem;
+    width: 7rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.plan-container:hover{
+    border: 2px solid blue;
+}
+
 .plantime{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    background-color: hsl(229, 24%, 87%);
+    margin-top: 2rem;
+    height: 3rem;
+    border-radius: 10px;
 }
