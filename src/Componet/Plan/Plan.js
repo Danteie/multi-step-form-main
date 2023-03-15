@@ -38,7 +38,10 @@ export default function Plan() {
             </div>
             <div className="plantime">
               <div>Montly</div>
-              <div><input type="checkbox"/></div>
+              <label className="switch">
+                <input type="checkbox"  />
+                <span className="slider round"></span>
+              </label>
               <div>Yearly</div>
             </div>
         </div>
