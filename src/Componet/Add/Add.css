@@ -1,0 +1,23 @@
+.add{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.adon-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid blue;
+    padding: 1rem;
+}
+
+.adon-card > *{
+    flex: 1;
+}
+
+.adon-card > div{
+    flex: 3
+}
+
+
