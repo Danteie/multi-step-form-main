@@ -4,6 +4,14 @@ import advancedImage from '../../Assets/images/icon-advanced.svg'
 import proImage from '../../Assets/images/icon-pro.svg'
 
 export default function Plan() {
+
+
+
+  function selectPlan(plan){
+    console.log('selektovan je plan' + plan);
+  }
+
+
   return (
     <div>
         <h1 className="title">Plan</h1>
@@ -11,29 +19,29 @@ export default function Plan() {
         <div className="info">
             <div className="plan">
 
-              <div className="plan-container">
+              <button className="plan-container" onClick={() => selectPlan('arcade')}>
                 <img src={arcadeImage} alt='ardace'/>
                 <div>
                   <h3>Arcade</h3>
                   <p>$9/mo</p>
                 </div>
-              </div>
+              </button>
 
-              <div className="plan-container">
+              <button className="plan-container" onClick={() => selectPlan('advanced')}>
                 <img src={advancedImage} alt='advanced'/>
                 <div>
                   <h3>Advanced</h3>
                   <p>$9/mo</p>
                 </div>
-              </div>
+              </button>
 
-              <div className="plan-container">
+              <button className="plan-container" onClick={() => selectPlan('pro')}>
                 <img src={proImage} alt='pro'/>
                 <div>
                   <h3>Pro</h3>
                   <p>$9/mo</p>
                 </div>
-              </div>
+              </button>
 
             </div>
             <div className="plantime">

@@ -6,6 +6,8 @@ import Add from './Componet/Add/Add';
 import Summary from './Componet/Summary/Summary';
 
 function App() {
+
+//Routing  
   let paths =  [<Info />,<Plan />,<Add/>,<Summary/>];  
   const [index, setIndex] = useState(0);
 
@@ -15,7 +17,6 @@ function App() {
   }
 
   function goBack(e){
-    console.log(index);
     if(index == 0) return
     setIndex(index - 1)
   }
@@ -34,6 +35,12 @@ function App() {
     } 
     steps[index].style.background = 'red';
   }
+
+//Payment Selected
+
+
+
+
 
 
   useEffect(()=>{
