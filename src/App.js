@@ -8,7 +8,7 @@ import Summary from './Componet/Summary/Summary';
 function App() {
 
 //Routing  
-  let paths =  [<Info />,<Plan />,<Add/>,<Summary/>];  
+  let paths =  [<Info />,<Plan plan={plan}/>,<Add/>,<Summary/>];  
   const [index, setIndex] = useState(0);
 
   function nextStep(e){
@@ -39,7 +39,16 @@ function App() {
 //Payment Selected
 
 
+function plan(p){
+  let plan = p; // registrovan plan
+  console.log(p);
+}
 
+
+
+function selectPlan(plan){
+  console.log(plan);
+}
 
 
 

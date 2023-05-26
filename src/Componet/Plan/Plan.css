@@ -4,7 +4,6 @@
 }
 
 
-
 .plan-container img{
     width: 45px;
     height: 45px;
@@ -24,6 +23,10 @@
 
 .plan-container:hover{
     border: 2px solid blue;
+}
+
+.plan-container:target{
+   background-color: red;
 }
 
 .plantime{

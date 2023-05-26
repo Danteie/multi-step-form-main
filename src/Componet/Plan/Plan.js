@@ -3,12 +3,15 @@ import arcadeImage from '../../Assets/images/icon-arcade.svg'
 import advancedImage from '../../Assets/images/icon-advanced.svg'
 import proImage from '../../Assets/images/icon-pro.svg'
 
-export default function Plan() {
+export default function Plan({plan}) {
 
 
-
-  function selectPlan(plan){
-    console.log('selektovan je plan' + plan);
+  const handleClick = (e) => {
+    e.button.style.backgroundColor = 'blue';
+    let value = e.target.value
+    plan(value)
+    console.log(e);
+    e.currentTarget.style.backgroundColor = 'salmon';
   }
 
 
@@ -19,7 +22,7 @@ export default function Plan() {
         <div className="info">
             <div className="plan">
 
-              <button className="plan-container" onClick={() => selectPlan('arcade')}>
+              <button className="plan-container" onClick={handleClick} value={'arcade'}>
                 <img src={arcadeImage} alt='ardace'/>
                 <div>
                   <h3>Arcade</h3>
@@ -27,7 +30,7 @@ export default function Plan() {
                 </div>
               </button>
 
-              <button className="plan-container" onClick={() => selectPlan('advanced')}>
+              <button className="plan-container" onClick={handleClick} value={'advanced'}>
                 <img src={advancedImage} alt='advanced'/>
                 <div>
                   <h3>Advanced</h3>
@@ -35,7 +38,7 @@ export default function Plan() {
                 </div>
               </button>
 
-              <button className="plan-container" onClick={() => selectPlan('pro')}>
+              <button className="plan-container" onClick={handleClick} value={'pro'}>
                 <img src={proImage} alt='pro'/>
                 <div>
                   <h3>Pro</h3>
