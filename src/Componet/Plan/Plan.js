@@ -2,6 +2,7 @@ import "./Plan.css"
 import arcadeImage from '../../Assets/images/icon-arcade.svg'
 import advancedImage from '../../Assets/images/icon-advanced.svg'
 import proImage from '../../Assets/images/icon-pro.svg'
+import { useEffect } from "react"
 
 export default function Plan({plan}) {
 
@@ -13,6 +14,22 @@ export default function Plan({plan}) {
     console.log(e);
     e.currentTarget.style.backgroundColor = 'salmon';
   }
+
+  function planSelect(){
+    var switchButton = document.getElementById('switch').checked;
+    console.log(switchButton);
+    if (switchButton ==null) {
+      console.log('e');
+      return <p>$9/mo</p>
+    }else{
+      return <p>$9/yo</p>
+    }
+ }
+
+
+
+
+
 
 
   return (
@@ -26,7 +43,7 @@ export default function Plan({plan}) {
                 <img src={arcadeImage} alt='ardace'/>
                 <div>
                   <h3>Arcade</h3>
-                  <p>$9/mo</p>
+                  <h1>{planSelect()}</h1>
                 </div>
               </button>
 
@@ -50,7 +67,7 @@ export default function Plan({plan}) {
             <div className="plantime">
               <div>Montly</div>
               <label className="switch">
-                <input type="checkbox"  />
+                <input type="checkbox"  id='switch'/>
                 <span className="slider round"></span>
               </label>
               <div>Yearly</div>
