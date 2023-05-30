@@ -2,7 +2,6 @@ import "./Plan.css"
 import arcadeImage from '../../Assets/images/icon-arcade.svg'
 import advancedImage from '../../Assets/images/icon-advanced.svg'
 import proImage from '../../Assets/images/icon-pro.svg'
-import { useEffect } from "react"
 
 export default function Plan({plan}) {
 
@@ -18,12 +17,19 @@ export default function Plan({plan}) {
   function planSelect(){
     var switchButton = document.getElementById('switch').checked;
     console.log(switchButton);
-    if (switchButton ==null) {
-      console.log('e');
-      return <p>$9/mo</p>
+    const element = document.getElementsByClassName("plan-price");
+
+    if (!switchButton) {
+      element[0].innerHTML = '$9/mo';
+      element[1].innerHTML = '$12/mo';
+      element[2].innerHTML = '$15/mo';
     }else{
-      return <p>$9/yo</p>
+      element[0].innerHTML = '$90/yo';
+      element[1].innerHTML = '$120/yo';
+      element[2].innerHTML = '$150/yo';
     }
+
+
  }
 
 
@@ -43,7 +49,7 @@ export default function Plan({plan}) {
                 <img src={arcadeImage} alt='ardace'/>
                 <div>
                   <h3>Arcade</h3>
-                  <h1>{planSelect()}</h1>
+                  <p className='plan-price'>$9/mo</p>
                 </div>
               </button>
 
@@ -51,7 +57,7 @@ export default function Plan({plan}) {
                 <img src={advancedImage} alt='advanced'/>
                 <div>
                   <h3>Advanced</h3>
-                  <p>$9/mo</p>
+                  <p className='plan-price'>$12/mo</p>
                 </div>
               </button>
 
@@ -59,7 +65,7 @@ export default function Plan({plan}) {
                 <img src={proImage} alt='pro'/>
                 <div>
                   <h3>Pro</h3>
-                  <p>$9/mo</p>
+                  <p className='plan-price'>$15/mo</p>
                 </div>
               </button>
 
@@ -67,7 +73,7 @@ export default function Plan({plan}) {
             <div className="plantime">
               <div>Montly</div>
               <label className="switch">
-                <input type="checkbox"  id='switch'/>
+                <input type="checkbox"  id='switch' onChange={planSelect}/>
                 <span className="slider round"></span>
               </label>
               <div>Yearly</div>
