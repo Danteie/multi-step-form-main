@@ -6,8 +6,6 @@ export default function SUMMARY() {
         <h1 className="title">SUMMARY</h1>
         <p className="subtext">Double-check everything looks OK before Confirming</p>
         <div className="info">
-          
-
         </div>
     </div>
   );

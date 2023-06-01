@@ -41,7 +41,7 @@ function App() {
 
 function plan(p){
   let plan = p; // registrovan plan
-  console.log(p);
+  console.log(plan);
 }
 
 

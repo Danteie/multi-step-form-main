@@ -5,37 +5,44 @@ import proImage from '../../Assets/images/icon-pro.svg'
 
 export default function Plan({plan}) {
 
-
+//handle Click for selecting plan
   const handleClick = (e) => {
-    e.button.style.backgroundColor = 'blue';
+   document.getElementsByClassName('plan-container')[0].style.backgroundColor = 'blue';
+   document.getElementsByClassName('plan-container')[1].style.backgroundColor = 'blue';
+   document.getElementsByClassName('plan-container')[2].style.backgroundColor = 'blue';
+
     let value = e.target.value
     plan(value)
-    console.log(e);
     e.currentTarget.style.backgroundColor = 'salmon';
   }
 
+
+  //Mont to Year price switch
   function planSelect(){
     var switchButton = document.getElementById('switch').checked;
-    console.log(switchButton);
     const element = document.getElementsByClassName("plan-price");
+    const free = document.getElementsByClassName("free")
 
     if (!switchButton) {
       element[0].innerHTML = '$9/mo';
       element[1].innerHTML = '$12/mo';
       element[2].innerHTML = '$15/mo';
+      free[0].style.opacity = '0';
+      free[1].style.opacity = '0';
+      free[2].style.opacity = '0';
+      
+
     }else{
       element[0].innerHTML = '$90/yo';
       element[1].innerHTML = '$120/yo';
       element[2].innerHTML = '$150/yo';
+
+      free[0].style.opacity = '1'
+      free[1].style.opacity = '1'
+      free[2].style.opacity = '1'
+      
     }
-
-
  }
-
-
-
-
-
 
 
   return (
@@ -44,12 +51,12 @@ export default function Plan({plan}) {
         <p className="subtext">Please provide your name, email address, and phone number.</p>
         <div className="info">
             <div className="plan">
-
               <button className="plan-container" onClick={handleClick} value={'arcade'}>
                 <img src={arcadeImage} alt='ardace'/>
                 <div>
                   <h3>Arcade</h3>
                   <p className='plan-price'>$9/mo</p>
+                  <p className='free'>free</p>
                 </div>
               </button>
 
@@ -58,6 +65,7 @@ export default function Plan({plan}) {
                 <div>
                   <h3>Advanced</h3>
                   <p className='plan-price'>$12/mo</p>
+                  <p className='free'>free</p>
                 </div>
               </button>
 
@@ -66,6 +74,7 @@ export default function Plan({plan}) {
                 <div>
                   <h3>Pro</h3>
                   <p className='plan-price'>$15/mo</p>
+                  <p className='free'>free</p>
                 </div>
               </button>
 
