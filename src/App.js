@@ -8,7 +8,7 @@ import Summary from './Componet/Summary/Summary';
 function App() {
 
 //Routing  
-  let paths =  [<Info />,<Plan plan={plan}/>,<Add/>,<Summary/>];  
+  let paths =  [<Info />,<Plan plan={plan}/>,<Add extra={extra}/>,<Summary/>];  
   const [index, setIndex] = useState(0);
 
   function nextStep(e){
@@ -44,12 +44,9 @@ function plan(p){
   console.log(plan);
 }
 
-
-
-function selectPlan(plan){
-  console.log(plan);
+function extra(e){
+  console.log(e);
 }
-
 
 
   useEffect(()=>{
