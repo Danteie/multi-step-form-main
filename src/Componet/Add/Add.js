@@ -4,7 +4,13 @@ export default function ADD({extra}) {
 
  
 function check(){
-  extra('test');
+  const checked = document.getElementsByClassName('extra-pick')
+
+  for (let index = 0; index < checked.length; index++) {
+    if (checked[index].checked) {
+      console.log(checked[index].value);
+    }
+  }
 }
 
   return (
@@ -13,7 +19,7 @@ function check(){
         <p className="subtext">Add-ons help enhance your gaming experience</p>
         <div className="info add">
             <div className="adon-card">
-                <input type="checkbox" name='choice' onChange={check}/>
+                <input type="checkbox" className='extra-pick' onChange={check} value='1'/>
                 <div>
                   <h2>Online services</h2>
                   <p>Access to multiplater games</p>
@@ -21,7 +27,7 @@ function check(){
                 <h2>+$1/mo</h2>
             </div>
             <div className="adon-card">
-                <input type="checkbox" name='choice 1' onChange={check}/>
+                <input type="checkbox" className='extra-pick' onChange={check} value='2'/>
                 <div>
                   <h2>Larger storage</h2>
                   <p>Extra 1TB of cloud save</p>
@@ -29,7 +35,7 @@ function check(){
                 <h2>+$2/mo</h2>
             </div>
             <div className="adon-card">
-                <input type="checkbox" name='choice 2' onChange={check}/>
+                <input type="checkbox" className='extra-pick' onChange={check} value='2'/>
                 <div>
                   <h2>Customizable Profile</h2>
                   <p>Custom theme on your profile</p>
