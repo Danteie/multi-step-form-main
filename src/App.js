@@ -7,8 +7,10 @@ import Summary from './Componet/Summary/Summary';
 
 function App() {
 
+  const [planItem, setPlanItem] = useState('default');
+
 //Routing  
-  let paths =  [<Info />,<Plan plan={plan}/>,<Add extra={extra}/>,<Summary/>];  
+  let paths =  [<Info />,<Plan plan={plan}/>,<Add extra={extra}/>,<Summary planItem={planItem}/>];  
   const [index, setIndex] = useState(0);
 
   function nextStep(e){
@@ -41,7 +43,8 @@ function App() {
 
 function plan(p){
   let plan = p; // registrovan plan
-  console.log(plan);
+  setPlanItem(p);
+  console.log(p);
 }
 
 function extra(e){

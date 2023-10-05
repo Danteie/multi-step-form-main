@@ -7,11 +7,11 @@ export default function Info() {
         <p className="subtext">Please provide your name, email address, and phone number.</p>
         <div className="info">
           <p>Name</p>
-          <input></input>
+          <input required></input>
           <p>Email Address</p>
-          <input></input>
+          <input required></input>
           <p>Phone Number</p>
-          <input></input>
+          <input required></input>
         </div>
     </div>
   );
