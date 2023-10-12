@@ -51,7 +51,7 @@ export default function Plan({plan}) {
         <p className="subtext">Please provide your name, email address, and phone number.</p>
         <div className="info">
             <div className="plan">
-              <button className="plan-container" onClick={handleClick} value={'arcade'}>
+              <button className="plan-container" onClick={handleClick} value={'Arcade'}>
                 <img src={arcadeImage} alt='ardace'/>
                 <div>
                   <h3>Arcade</h3>
@@ -60,7 +60,7 @@ export default function Plan({plan}) {
                 </div>
               </button>
 
-              <button className="plan-container" onClick={handleClick} value={'advanced'}>
+              <button className="plan-container" onClick={handleClick} value={'Advanced'}>
                 <img src={advancedImage} alt='advanced'/>
                 <div>
                   <h3>Advanced</h3>
@@ -69,7 +69,7 @@ export default function Plan({plan}) {
                 </div>
               </button>
 
-              <button className="plan-container" onClick={handleClick} value={'pro'}>
+              <button className="plan-container" onClick={handleClick} value={'Pro'}>
                 <img src={proImage} alt='pro'/>
                 <div>
                   <h3>Pro</h3>
